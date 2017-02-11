@@ -5,12 +5,17 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.ao.myapplication"
+        applicationId "io.github.oniatsu.fragmentstack.sample"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [ 'dart.henson.package' : 'io.github.oniatsu.fragmentpager.sample.fragments' ]
+//            }
+//        }
     }
     buildTypes {
         release {
@@ -18,7 +23,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    dexOptions {
+        maxProcessCount 1
+    }
 }
+//    apt {
+//        arguments {
+//            "dart.henson.package" "io.github.oniatsu.fragmentpager.sample.fragments"
+//        }
+//    }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -27,9 +51,18 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:design:25.1.1'
 
     compile 'io.reactivex.rxjava2:rxjava:2.0.5'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.annimon:stream:1.1.5'
+
+    compile 'com.f2prateek.dart:dart:2.0.1'
+    provided 'com.f2prateek.dart:dart-processor:2.0.1'
+    compile 'com.f2prateek.dart:henson:2.0.1'
+    provided 'com.f2prateek.dart:henson-processor:2.0.1'
+
+    compile project(path: ':fragmentstack')
+//    compile 'io.github.oniatsu:fragment-pager:0.1.0'
 }

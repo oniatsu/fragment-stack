@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable name="pageBean" type="io.github.oniatsu.fragmentstack.sample.beans.PageBean"/>
+    </data>
+    <FrameLayout
+        android:id="@+id/default_fragment2_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include
+            android:id="@+id/component_page"
+            layout="@layout/component_page"
+            bind:pageBean="@{pageBean}"
+            />
+    </FrameLayout>
+</layout>
