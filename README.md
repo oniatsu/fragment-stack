@@ -106,7 +106,7 @@ FragmentStack.of(this).clear();
 ## Applicaiton global config
 ```java
 FragmentStack.globalConfig()
-        .transitionInterceptor((fragmentPagerManager, fragmentTransaction) -> {
+        .transitionInterceptor((pageManager, fragmentTransaction) -> {
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         })
         .setup();
@@ -115,7 +115,7 @@ FragmentStack.globalConfig()
 ## A FragmentStack local config
 ```java
 FragmentStack.of(this).localConfig()
-        .transitionInterceptor((fragmentPagerManager, fragmentTransaction) -> {
+        .transitionInterceptor((pageManager, fragmentTransaction) -> {
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         })
         .setup();
@@ -132,7 +132,7 @@ FragmentStack.of(this).add(new NewFragment(), (pageManager, fragmentTransaction)
 
 ## If you have to inherit another Fragment and you cannot inherit `FragmentPagerLifeCycleFragment`
 
-Implements `FragmentPagerLifeCycleListener` and call onForeground/onBackground on onResume/onPause manualy.
+Implements `FragmentPagerLifeCycleListener` interface and call onForeground/onBackground on onResume/onPause manualy.
 
 ```java
 public abstract YourFragment extends YourSuperFragment implements FragmentPagerLifeCycleListener {
