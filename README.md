@@ -4,10 +4,12 @@ This is a Android library to manage multiple page stacks of Fragment.
 
 You have a benefit of using the fragment like just pages simply.
 
-This provides mainly two functions.
+It provides mainly two functions.
 
 - Managing indipendent multiple fragment stacks like pages.
-- Support of adding page like life cycle. When a fragment is poped or pushed, the life cycle is called.
+- Support of adding life cycle like pages. When a fragment is poped or pushed, the life cycle is called.
+
+<img src="https://cloud.githubusercontent.com/assets/5919569/22864825/be849ad4-f19b-11e6-9a35-7937895c1c01.gif" width="280">
 
 # Installation
 
@@ -43,7 +45,7 @@ public class NewFragment extends FragmentPagerLifeCycleFragment {
 }
 ```
 
-This provides fragment page life cycles.
+It provides fragment page life cycles.
 - onForeground
   - Called when the fragment page become foreground to the user.
   - This is called after Fragment#onResume().
@@ -54,9 +56,9 @@ This provides fragment page life cycles.
 The page life cycles is called on this order.
 - onResume → onForeground → onBackground → onPause
 
-## Add and remove, anywhere and anytime.
+## Add and remove pages, anywhere and anytime.
 
-You can get the registered FragmentStack like this.
+You can get the registered FragmentStack like this on any class.
 ```java
 FragmentStack.of(this)                     // If you want to get it on same activity/fragment
 // or
@@ -89,7 +91,7 @@ FragmentStack.of(this).hasPage();
 FragmentStack.of(this).back(3);
 ```
 
-### Back to specific taged page.
+### Back to the specific fragment page.
 ```java
 FragmentStack.of(this).back(PastFragment.class, 0);
 // or
@@ -133,7 +135,7 @@ FragmentStack.of(this).add(new NewFragment(), (pageManager, fragmentTransaction)
 Implements `FragmentPagerLifeCycleListener` and call onForeground/onBackground on onResume/onPause manualy.
 
 ```java
-public abstract YourFragment extends YourBaseFragment implements FragmentPagerLifeCycleListener {
+public abstract YourFragment extends YourSuperFragment implements FragmentPagerLifeCycleListener {
 
     @Override
     public void onForeground() {
