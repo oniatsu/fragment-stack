@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
-        <variable name="pageBean" type="io.github.oniatsu.fragmentstack.sample.beans.PageBean"/>
+
+        <variable
+            name="pageBean"
+            type="io.github.oniatsu.fragmentstack.sample.beans.PageBean" />
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@drawable/border"
         android:gravity="center"
+        android:orientation="vertical"
         tools:showIn="@layout/default10_fragment">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/text1"
                 android:layout_width="wrap_content"
@@ -26,19 +30,21 @@
                 android:text="@{pageBean.name}"
                 android:textSize="@dimen/common_big_text_size"
                 tools:text="Tab 0" />
+
             <TextView
                 android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/common_big_text_size"
                 android:text="@{String.valueOf(pageBean.getPageNumberString())}"
+                android:textSize="@dimen/common_big_text_size"
                 tools:text="Page 0" />
         </LinearLayout>
+
         <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/common_text_size"
-            android:text="Next" />
+            android:text="Next"
+            android:textSize="@dimen/common_text_size" />
     </LinearLayout>
 </layout>

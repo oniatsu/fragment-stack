@@ -1,10 +1,10 @@
 package io.github.oniatsu.fragmentstack.sample.views.activities;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fragmentstack.FragmentStack;
 import io.github.fragmentstack.PageManager;
@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        binding = MainActivityBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // Set global config (Option)
         FragmentStack.globalConfig()
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setup();
 
-        binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
         binding.tabViewPager.setAdapter(new TabFragmentPagerAdapter(this, getSupportFragmentManager()));
         binding.tabViewPager.setOffscreenPageLimit(3);
         binding.tabLayout.setupWithViewPager(binding.tabViewPager);

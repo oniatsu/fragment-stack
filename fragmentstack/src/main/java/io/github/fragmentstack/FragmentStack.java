@@ -1,9 +1,9 @@
 package io.github.fragmentstack;
 
-import android.support.annotation.IdRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,8 @@ public final class FragmentStack {
         return globalFragmentPagerTransitionInterceptor;
     }
 
-    private FragmentStack() {}
+    private FragmentStack() {
+    }
 
     /**
      * Call and start application global config setup.
