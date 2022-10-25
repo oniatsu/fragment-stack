@@ -4,6 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="common_margin">8dp</dimen>
-    <dimen name="common_text_size">42dp</dimen>
-    <dimen name="common_big_text_size">64dp</dimen>
+    <dimen name="common_text_size">42sp</dimen>
+    <dimen name="common_big_text_size">64sp</dimen>
 </resources>

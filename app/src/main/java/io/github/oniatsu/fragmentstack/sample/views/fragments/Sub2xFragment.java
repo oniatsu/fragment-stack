@@ -1,10 +1,12 @@
 package io.github.oniatsu.fragmentstack.sample.views.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import io.github.fragmentstack.FragmentStack;
 import io.github.oniatsu.fragmentstack.sample.beans.PageBean;
@@ -22,12 +24,15 @@ public class Sub2xFragment extends BaseDefaultFragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         pageBean = (PageBean) getArguments().getSerializable(ExtraKey.pageBean.toString());
-        binding.setPageBean(pageBean);
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding.setPageBean(pageBean);
         binding.componentPage.button1.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             Sub2xFragment sub0xFragment = new Sub2xFragment();

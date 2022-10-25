@@ -1,8 +1,9 @@
 package io.github.oniatsu.fragmentstack.sample.views.fragments;
 
-import android.support.v4.app.FragmentTransaction;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fragmentstack.views.FragmentPagerLifeCycleFragment;
 import io.github.oniatsu.fragmentstack.sample.R;

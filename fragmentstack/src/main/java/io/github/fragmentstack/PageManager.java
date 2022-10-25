@@ -1,9 +1,9 @@
 package io.github.fragmentstack;
 
-import android.support.annotation.IdRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.annotation.IdRes;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fragmentstack.listeners.FragmentPagerTransitionInterceptor;
 import io.github.fragmentstack.views.FragmentPagerLifeCycleFragment;
@@ -179,7 +179,7 @@ public class PageManager {
     /**
      * Add a new fragment page.
      *
-     * @param newFragment New fragment to be added.
+     * @param newFragment                            New fragment to be added.
      * @param eachFragmentPagerTransitionInterceptor Each transition interceptor.
      */
     public void add(Fragment newFragment, FragmentPagerTransitionInterceptor eachFragmentPagerTransitionInterceptor) {

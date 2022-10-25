@@ -7,9 +7,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-        <activity android:name="io.github.oniatsu.fragmentstack.sample.views.activities.MainActivity">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="io.github.oniatsu.fragmentstack.sample.views.activities.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,7 @@
 package io.github.fragmentstack.listeners;
 
-import android.support.v4.app.FragmentTransaction;
+
+import androidx.fragment.app.FragmentTransaction;
 
 import io.github.fragmentstack.PageManager;
 
@@ -12,7 +13,7 @@ public interface FragmentPagerTransitionInterceptor {
     /**
      * Called when fragment transaction is setting up.
      *
-     * @param pageManager Active PageManager
+     * @param pageManager         Active PageManager
      * @param fragmentTransaction Active fragmentTransaction
      */
     void onTransaction(PageManager pageManager, FragmentTransaction fragmentTransaction);

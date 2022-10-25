@@ -2,9 +2,10 @@ package io.github.oniatsu.fragmentstack.sample.views.adapters;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import io.github.oniatsu.fragmentstack.sample.beans.PageBean;
 import io.github.oniatsu.fragmentstack.sample.views.fragments.BaseDefaultFragment;
@@ -25,7 +26,7 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Bundle bundle = new Bundle();
         PageBean pageBean = new PageBean("Tab " + position, 0);
-        switch(position){
+        switch (position) {
             case 0:
                 Default00Fragment default00Fragment = new Default00Fragment();
                 bundle.putSerializable(BaseDefaultFragment.ExtraKey.pageBean.toString(), pageBean);

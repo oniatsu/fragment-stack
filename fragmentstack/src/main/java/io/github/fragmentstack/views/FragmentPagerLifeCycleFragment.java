@@ -1,6 +1,6 @@
 package io.github.fragmentstack.views;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import io.github.fragmentstack.listeners.FragmentPagerLifeCycleListener;
 
